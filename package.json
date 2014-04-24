@@ -1,0 +1,24 @@
+{
+  "name": "psql-node",
+  "version": "0.0.0",
+  "description": "first steps connecting nodejs to Postgres",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "Bondifrench"
+  },
+  "keywords": [
+    "Postgres",
+    "NodeJs",
+    "pg"
+  ],
+  "author": "Bondifrench",
+  "license": "ISC",
+  "dependencies": {
+    "pg": "^3.0.3",
+    "pg.js": "^3.0.4"
+  }
+}
