@@ -1,10 +1,26 @@
+var fs = require('fs');
+var path = require('path');
+var PGPASS_FILE = path.join(__dirname, "./.pgpass");
+
+var pgtokens = fs.readFileSync(PGPASS_FILE).toString().trimRight().split(":");
+var host = pgtokens[2];
+var port = pgtokens[3];
+var dbname = pgtokens[4];
+var user = pgtokens[0];
+var password = pgtokens[1];
+//for illustrative purposes, do not leave this in production!!
+//console.log("postgres://%s:%s@%s:%s/%s",user,password,host,port,dbname);
+
+var conString = "postgres://"+user+":"+password+"@"+host+":"+port+"/"+dbname;
+
 var pg = require('pg.js');
+
 
 //var conString = "postgres://myusername:mypassword@hostname:5432/dbname";
 //it's a url, so don't forget to encode password for URL 
 //in production put connection string into a seperate .pgpass file
 
-var conString = "postgres://nodetest:Welcome1@localhost:5432/nodetest";
+//var conString = "postgres://nodetest:Welcome1@localhost:5432/nodetest";
 
 pg.connect(conString, function(err, client, done) {
   if(err) {

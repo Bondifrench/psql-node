@@ -18,7 +18,7 @@
   "author": "Bondifrench",
   "license": "ISC",
   "dependencies": {
-    "pg": "^3.0.3",
-    "pg.js": "^3.0.4"
+    "pg.js": "^3.0.4",
+    "sequelize": "^2.0.0-dev11"
   }
 }
